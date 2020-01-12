@@ -9,7 +9,7 @@ import com.infosys.fs.config.APIContext;
 import com.infosys.fs.dao.UserDao;
 import com.infosys.fs.exception.ExternalSystemUnavailableException;
 import com.infosys.fs.exception.NotFoundException;
-import com.infosys.fs.integration.facade.CreditCheckService;
+import com.infosys.fs.integration.CreditCheckService;
 import com.infosys.fs.mapper.CreditCheckResponseMapper;
 import com.infosys.fs.model.UserCreditRequest;
 

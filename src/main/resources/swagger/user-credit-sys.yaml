@@ -1,8 +1,8 @@
 swagger: "2.0"
 info:
   version: '1.0'
-  title: User Management Business App
-  description: This App exposes API to manage user like credit check
+  title: Credit Check System App
+  description: This App exposes API to retrieve credit score from DB
 schemes:
   - http
 basePath: /sys/user-credit/
@@ -23,8 +23,7 @@ paths:
         - in: header
           name: MWMD-requestTimestamp
           description: >-
-            Indicates the time at which request was created.
-            Date format: ISO-8601 format (yyyy-MM-dd'T'HH:mm:ss'Z' or yyyy-MM-dd'T'HH:mm:ss±hh:mm)
+            Indicates the time at which request was created in milliseconds
           required: true
           type: string
         - in: header
@@ -57,10 +56,6 @@ paths:
           description: Bad Request
         500:
           description: Internal Server Error
-        551:
-          description: Unable to reach Downstream system
-        552:
-          description: External System Connection error
 definitions:
   APIResponseView:
     properties:
