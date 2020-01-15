@@ -5,27 +5,27 @@
  */
 package com.infosys.fs.rest;
 
-import com.infosys.fs.model.UserCreditRequest;
-import io.swagger.annotations.*;
+import javax.validation.Valid;
+
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.validation.Valid;
-import javax.validation.constraints.*;
-import java.util.List;
+import com.infosys.fs.model.UserCreditRequest;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-01-02T10:58:13.754+05:30")
 
 @Api(value = "v1", description = "the v1 API")
+@RequestMapping(value = "/sys/user-credit")
 public interface V1Api {
-
+	
     @ApiOperation(value = "API to Check the Credit Score of the User", nickname = "creditCheck", notes = "Check Credit Score of the user", tags={ "User Credit", })
     @ApiResponses(value = { 
         @ApiResponse(code = 202, message = "Accepted"),

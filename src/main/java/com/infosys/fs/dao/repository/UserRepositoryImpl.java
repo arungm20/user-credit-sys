@@ -13,21 +13,21 @@ import org.springframework.stereotype.Repository;
 import com.infosys.fs.model.User;
 
 @Repository
-public class UserRepositoryImpl implements UserRepositoryCustom{
-
+public class UserRepositoryImpl implements UserRepositoryCustom {
+	
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserRepositoryImpl.class);
 	
 	@Autowired
 	MongoTemplate mongoTemplate;
-
+	
 	@Override
 	public User findByUserIdCustom(String userId) {
 		
 		Query query = new Query();
 		query.addCriteria(Criteria.where("userId").is(userId));
-		List<User> users = mongoTemplate.find(query,User.class);
+		List<User> users = mongoTemplate.find(query, User.class);
 		
-		LOGGER.info("Custom User :{}",users);
+		LOGGER.info("Custom User :{}", users);
 		
 		return users.get(0);
 	}
